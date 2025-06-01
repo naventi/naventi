@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naventi</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: "Courier New", monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 1rem;
+    }
+    #phrase {
+      font-size: 2.2rem;
+      text-align: center;
+      white-space: pre-line;
+      max-width: 800px;
+      text-transform: lowercase;
+    }
+    button {
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background: none;
+      border: 1px solid white;
+      color: white;
+      cursor: pointer;
+      text-transform: lowercase;
+    }
+    button:hover {
+      background-color: white;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="phrase"></div>
+  <button onclick="newPhrase()">more phrases</button>
+
+  <script>
+    const phrases = [
+      "stillness doesn’t mean stagnation.",
+      "motion without spectacle.",
+      "movement without applause.",
+      "patience is power held.",
+      "resonance, not volume.",
+      "depth over display.",
+      "refinement over reaction.",
+      "undisturbed but undeniable.",
+      "darkness isn't absence — it’s density.",
+      "reticence is control.",
+      "sometimes the strongest statement is the one left unspoken.",
+      "volume distracts from value.",
+      "intent lives in the still.",
+      "composure is movement mastered.",
+      "you don’t hear gravity coming.",
+      "intention over interference.",
+      "no celebration. just precision.",
+      "the work speaks—so we don’t.",
+      "refined rage. quiet revolt.",
+      "you don’t have to be seen to be felt.",
+      "underwhelming by choice. unforgettable by nature.",
+      "felt first. understood later.",
+      "you don't have to be loud to be real.",
+      "controlled. not contained.",
+      "this silence has substance.",
+      "some storms announce nothing, but take everything.",
+      "timing isn’t luck. it’s discipline.",
+      "not every move needs an audience.",
+      "power isn’t proven. it’s felt.",
+      "what you master, you don’t flaunt.",
+      "unannounced. unforgettable.",
+      "certainty doesn't search for validation.",
+      "too rooted to rattle.",
+      "poise over panic.",
+      "clarity whispers where confusion screams.",
+      "recognized second, recalled first.",
+      "silence feeds the fiercest flame.",
+      "stillness doesn’t mean stagnation. — rainer maria rilke",
+      "motion without spectacle. — lao tzu",
+      "movement without applause. — marie curie",
+      "patience is power held. — ralph waldo emerson",
+      "resonance, not volume. — maya angelou",
+      "depth over display. — henry david thoreau",
+      "refinement over reaction. — martha graham",
+      "undisturbed but undeniable. — audre lorde",
+      "darkness isn't absence — it’s density. — james baldwin",
+      "reticence is control. — michel de montaigne",
+      "sometimes the strongest statement is the one left unspoken. — marilyn monroe",
+      "volume distracts from value. — susan sontag",
+      "intent lives in the still. — virginia woolf",
+      "composure is movement mastered. — bruce lee",
+      "you don’t hear gravity coming. — stephen hawking",
+      "intention over interference. — eckhart tolle",
+      "no celebration. just precision. — warren buffett",
+      "the work speaks—so we don’t. — andy warhol",
+      "refined rage. quiet revolt. — james baldwin",
+      "you don’t have to be seen to be felt. — maya angelou",
+      "underwhelming by choice. unforgettable by nature. — rumi",
+      "felt first. understood later. — virginia woolf",
+      "you don't have to be loud to be real. — audre lorde",
+      "controlled. not contained. — michel foucault",
+      "this silence has substance. — henri bergson",
+      "some storms announce nothing, but take everything. — john donne",
+      "timing isn’t luck. it’s discipline. — annette simmons",
+      "not every move needs an audience. — sun tzu",
+      "power isn’t proven. it’s felt. — malcolm x",
+      "what you master, you don’t flaunt. — lao tzu",
+      "unannounced. unforgettable. — maya angelou",
+      "certainty doesn't search for validation. — nelson mandela",
+      "too rooted to rattle. — audre lorde",
+      "poise over panic. — barack obama",
+      "clarity whispers where confusion screams. — helen keller",
+      "recognized second, recalled first. — albert einstein",
+      "silence feeds the fiercest flame. — florence nightingale",
+      "precision beats power, and timing beats speed. — ray lewis",
+      "let your actions speak louder than words. — abraham lincoln",
+      "simplicity is the ultimate sophistication. — leonardo da vinci",
+      "patience is bitter, but its fruit is sweet. — jean-jacques rousseau",
+      "precision beats power, and timing beats speed. — usain bolt",
+      "speak only if it improves upon the silence. — mahatma gandhi",
+      "reputation is what others think of you; character is what you really are. — john wooden"
+    ];
+
+    function typeEffect(element, text, speed = 40) {
+      element.innerHTML = "";
+      let i = 0;
+      const timer = setInterval(() => {
+        if (i < text.length) {
+          element.innerHTML += text.charAt(i);
+          i++;
+        } else {
+          clearInterval(timer);
+        }
+      }, speed);
+    }
+
+    function newPhrase() {
+      const phrase = phrases[Math.floor(Math.random() * phrases.length)];
+      const element = document.getElementById("phrase");
+      typeEffect(element, phrase);
+    }
+
+    window.onload = newPhrase;
+  </script>
+</body>
+</html>
